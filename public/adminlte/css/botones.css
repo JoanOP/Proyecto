@@ -1,0 +1,24 @@
+ .card-body table tbody td .editar{
+    background:#229954;
+     margin-right:10px;
+}
+ .card-body table tbody td .eliminar{
+    background:#C22727;
+}
+
+ .card-body table tbody td .btn i{
+    color:#fff;
+     font-size:18px; 
+}
+ .card-body table tbody td .eliminar:hover{
+    background: #D54646;
+}
+ .card-body table tbody td .editar:hover{
+    background: #31b96a;
+}
+ .frm{
+    width: 50px;
+    display: inline-block;
+}
+
+
