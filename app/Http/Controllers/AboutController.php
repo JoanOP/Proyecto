@@ -29,9 +29,18 @@ class AboutController extends Controller
    $about->titulo=$request->titulo;
    $about->descripcion=$request->descripcion;
    $about->imagen=$request->imagen;
-   $about->save();
+  // $about = $request->file('imagen')->getClientOriginalExtension();
+  // return $request->file('imagen')->storeAS('docs', 'FileName.' . $about);
+  $about->save();
    return redirect('admin/abouts');
 
+ }
+
+ public function image(Request $req)
+ {
+
+   
+    
  }
       
 

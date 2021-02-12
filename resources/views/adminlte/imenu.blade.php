@@ -1,16 +1,16 @@
 @extends('adminlte.principal')
 @section('admincontent')
-<div class="col-md-12">
+<div class="col-md-12  card card-frm">
     <!-- general form elements -->
-    <div class="card card-primary">
+    
         <div class="card-header">
             <h3 class="card-title">Ingreso de Menús</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
+        <div class="card-body">
         <form role="form" action="{{url('admin/ingreso/menu')}}" method="post">
             @csrf
-            <div class="card-body">
                 <div class="form-group">
                     <label>Descripción</label>
                     <input type="text" name="descrip" class="form-control" placeholder="Ingrese el menu">
@@ -24,16 +24,14 @@
                         <input type="number" name="orden" class="form-control" placeholder="Ingrese el orden">
                 </div>
 
-            </div>
-            <!-- /.card-body -->
 
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="card-footer">
+                <button type="submit" class="btn btn-dark col-12">Editar</button>
             </div>
         </form>
     </div>
 </div>
-<div class="card">
+<div class=" card card-frm">
     <div class="card-header">
         <h3 class="card-title">DATOS </h3>
     </div>

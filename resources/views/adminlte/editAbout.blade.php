@@ -1,17 +1,18 @@
 @extends('adminlte.principal')
 @section('admincontent')
-<div class="col-md-12">
+<div class="col-md-12 card card-frm">
     <!-- general form elements -->
-    <div class="card card-primary">
+ 
         <div class="card-header">
             <h3 class="card-title">Editar About us</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
+        <div class="card-body " >
         <form role="form" action="{{url('admin/abouts/update',$abouts->id)}}" method="post">
         @method('put')
         @csrf
-            <div class="card-body">
+            
                 <div class="form-group">
                     <label>Titulo</label>
                     <input type="text" name="titulo" class="form-control"  value="{{$abouts->titulo}}">
@@ -38,11 +39,10 @@
                   </div>
   
             </div> -->
-            </div>
-            <!-- /.card-body -->
+           
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-dark col-12">Enviar</button>
             </div>
         </form>
         <br>

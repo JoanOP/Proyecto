@@ -1,16 +1,16 @@
 @extends('adminlte.principal')
 @section('admincontent')
-<div class="col-md-12">
+<div class="col-md-12  card card-frm">
     <!-- general form elements -->
-    <div class="card card-primary">
+    
         <div class="card-header">
             <h3 class="card-title">Ingreso de redes sociales</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
+        <div class="card-body">
         <form role="form" action="{{url('admin/ingreso/redes')}}" method="post">
         @csrf
-            <div class="card-body">
                 <div class="form-group">
                     <label>Icono</label>
                     <input type="text" name="icono" class="form-control"  placeholder="Ingrese el icono">
@@ -20,18 +20,17 @@
                     <input type="text" name="ruta" class="form-control" placeholder="Ingrese la ruta">
                 </div>
                
-            </div>
-            <!-- /.card-body -->
+           
 
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="card-footer">
+                <button type="submit" class="btn btn-dark col-12">Editar</button>
             </div>
         </form>
         <br>
     </div>
 </div>
 
-<div class="card">
+<div class="card card-frm">
     <div class="card-header">
         <h3 class="card-title">DATOS </h3>
     </div>

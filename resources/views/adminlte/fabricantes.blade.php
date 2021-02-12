@@ -1,32 +1,30 @@
 @extends('adminlte.principal')
 @section('admincontent')
-<div class="col-md-12 ">
+<div class="col-md-12  card card-frm">
     <!-- general form elements -->
-    <div class="card card-primary">
-        <div class="card-header">
-            <h3 class="card-title">Ingreso de Fabricantes</h3>
-        </div>
-        <!-- /.card-header -->
-        <!-- form start -->
+
+    <div class="card-header">
+        <h3 class="card-title">Ingreso de Fabricantes</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <div class="card-body">
         <form role="form" action="{{url('admin/ingreso/fabricantes')}}" method="post">
-        @csrf
-            <div class="card-body">
-                <div class="form-group">
-                    <label>Nombre</label>
-                    <input type="text" name="nombre" class="form-control"  placeholder="Ingrese el icono">
-                </div>
-                
+            @csrf
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" name="nombre" class="form-control" placeholder="Ingrese el nombre">
             </div>
-            <!-- /.card-body -->
+
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-dark col-12">Editar</button>
             </div>
         </form>
         <br>
     </div>
 </div>
-<div class="card">
+<div class=" card card-frm">
     <div class="card-header">
         <h3 class="card-title">DATOS </h3>
     </div>
@@ -37,29 +35,30 @@
                 <tr>
                     <th>#</th>
                     <th>Nombre</th>
-                    
+
                     <th>Action</th>
-                   
+
                 </tr>
             </thead>
             <tbody>
-           
-            @foreach($fabricantes as $item)
+
+                @foreach($fabricantes as $item)
                 <tr>
 
                     <td>{{$loop->iteration}}</td>
                     <td>{{$item->nombre}}</td>
-                   
+
                     <td>
-                    <button class="btn editar"><a href="{{url('admin/fabricantes/edit',$item->id)}}"><i class="far fa-edit" ></i></a></button>
-                    <span>
-                    <form class="frm" action="{{url('admin/fabricantes/eliminar',$item->id)}}" method="post">
-                    @method('delete')
-                    @csrf
-                    <button class="btn eliminar"><i class="far fa-trash-alt" ></i></button>
-                    </form>
-                    </span>           
-                     </tr>
+                        <button class="btn editar"><a href="{{url('admin/fabricantes/edit',$item->id)}}"><i
+                                    class="far fa-edit"></i></a></button>
+                        <span>
+                            <form class="frm" action="{{url('admin/fabricantes/eliminar',$item->id)}}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button class="btn eliminar"><i class="far fa-trash-alt"></i></button>
+                            </form>
+                        </span>
+                </tr>
                 @endforeach
             </tbody>
         </table>
