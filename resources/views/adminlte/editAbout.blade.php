@@ -1,5 +1,6 @@
 @extends('adminlte.principal')
 @section('admincontent')
+@include('templateadmin.titulo')
 <div class="col-md-12 card card-frm">
     <!-- general form elements -->
  
@@ -15,37 +16,29 @@
             
                 <div class="form-group">
                     <label>Titulo</label>
-                    <input type="text" name="titulo" class="form-control"  value="{{$abouts->titulo}}">
+                    <input type="text" name="titulo" class="form-control"  value="{{$abouts->titulo}}"required>
                 </div>
                 <div class="form-group">
-                    <label">Descripcion</label>
-                    <input type="text" name="descripcion" class="form-control"  value="{{$abouts->descripcion}}">
+                    <label>Descripcion</label>
+                    <input type="text" name="descripcion" class="form-control"  value="{{$abouts->descripcion}}"required>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label">Imagen</label>
-                    <input type="text" name="imagen" class="form-control"  value="{{$abouts->imagen}}">
+                    <input type="text" name="imagen" class="form-control"  value="{{$abouts->imagen}}"required>
+                </div> -->
+                <div class="form-group">
+                 <label class="titulo_img">Imagen</label> 
+                 <div class="img_dtable"><img src="{{asset('imagenes/imgabout').'/'.$abouts->imagen}}"
+                 class="titulo_img"></div>
+                    <input type="file" name="imagen" class="form-control" required>
                 </div>
-                 <!-- <div class="form-group">
-                    <label for="exampleInputFile">Imagen</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="imagen" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Seleccionar</label>
-                      </div>    
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Subir</span>
-                      </div>
-                    </div>
-                  </div>
-  
-            </div> -->
-           
-
+           <p>!La imagen se modifica en la BD pero no se esta guardando ni reemplazando en el sistema .............!</p>
             <div class="card-footer">
-                <button type="submit" class="btn btn-dark col-12">Enviar</button>
+                <button type="submit" class="btn btn-dark col-12" >Editar</button>
             </div>
         </form>
         <br>
     </div>
 </div>
+
 @endsection

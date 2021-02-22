@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
@@ -13,11 +14,16 @@ class productosController extends Controller
     }
     public function ingresoproductHome(Request $request){
         $productos=new Producto();
+        $file=$request->file('imagen');
+        $img=time()."-".$file->getClientOriginalName();
         $productos->nombre=$request->nombre;
         $productos->precio=$request->precio;
-        $productos->imagen=$request->imagen;
+        $productos->imagen=$img;
         $productos->save();
-        return redirect('admin/Homeproducto');
+        Storage::disk('imagenHome')->put($img,\File::get($file));
+       
+ 
+  return redirect('admin/Homeproducto');
     }
     
     public function formularioedit($id){
@@ -34,7 +40,6 @@ class productosController extends Controller
     }
     public function eliminar($id){
         $productos=Producto::find($id);    
-        
         $productos->delete();
         return redirect('admin/Homeproducto');
     }

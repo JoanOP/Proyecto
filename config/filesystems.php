@@ -30,11 +30,23 @@ return [
 
     'disks' => [
 
+        
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
-
+        'imagenAbout' => [
+            'driver' => 'local',
+            'root' => public_path('imagenes/imgabout'),
+        ],
+        'imagenHome' => [
+            'driver' => 'local',
+            'root' => public_path('imagenes/imgHome'),
+        ],
+        'imagenStore' => [
+            'driver' => 'local',
+            'root' => public_path('imagenes/imgStore'),
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -67,6 +79,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        
     ],
 
 ];

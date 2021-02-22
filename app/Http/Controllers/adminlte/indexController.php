@@ -9,7 +9,7 @@ use App\Models\Menu;
 class indexController extends Controller
 {
     public function index(){
-        return view('adminlte.principal');
+        return view('adminlte.welcome');
     }
     public function ingresomenu(){
         $menus=Menu::all();

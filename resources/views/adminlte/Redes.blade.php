@@ -1,5 +1,6 @@
 @extends('adminlte.principal')
 @section('admincontent')
+@include('templateadmin.titulo')
 <div class="col-md-12  card card-frm">
     <!-- general form elements -->
     
@@ -13,17 +14,19 @@
         @csrf
                 <div class="form-group">
                     <label>Icono</label>
-                    <input type="text" name="icono" class="form-control"  placeholder="Ingrese el icono">
+                    <input type="text" name="icono" class="form-control"  placeholder="Ingrese el icono" required>
+                    <div style="text-align:right;"><a target="_blank"href="https://fontawesome.com/icons?d=gallery">Página de iconos recomendos</a></div>  
                 </div>
                 <div class="form-group">
                     <label">Ruta</label>
-                    <input type="text" name="ruta" class="form-control" placeholder="Ingrese la ruta">
+                    <input type="text" name="ruta" class="form-control" placeholder="Ingrese la ruta" required>
+
                 </div>
                
            
 
                 <div class="card-footer">
-                <button type="submit" class="btn btn-dark col-12">Editar</button>
+                <button type="submit" class="btn btn-dark col-12  " >Guardar</button>
             </div>
         </form>
         <br>
@@ -40,9 +43,8 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Descripción</th>
+                    <th>Icono</th>
                     <th>Ruta</th>
-                    
                     <th>Action</th>
                    
                 </tr>
@@ -53,18 +55,18 @@
                 <tr>
 
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$item->icono}}</td>
+                    <td ><i style="font-size:35px;"class="{{$item->icono}}"><i></td>
                     <td>{{$item->ruta}}</td>
                     
                     <td>
-                    <button class="btn editar"><a href="{{url('admin/Redes-sociales/edit',$item->id)}}"><i class="far fa-edit" ></i></a></button>
+                    <button class="btn editar" title="Editar" ><a href="{{url('admin/Redes-sociales/edit',$item->id)}}"><i class="far fa-edit" ></i></a></button>
                     <span>
                     <form class="frm" action="{{url('admin/Redes-sociales/eliminar',$item->id)}}" method="post">
                     @method('delete')
                     @csrf
-                    <button class="btn eliminar"><i class="far fa-trash-alt" ></i></button>
+                    <button class="btn eliminar" title="Eliminar" onclick="return confirm('Quieres eliminar el registro')"><i class="far fa-trash-alt" ></i></button>
                     </form>
-                    </span>                </tr>
+                    </span> </tr>
                 @endforeach
             </tbody>
         </table>

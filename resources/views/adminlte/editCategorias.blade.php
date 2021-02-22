@@ -1,5 +1,6 @@
 @extends('adminlte.principal')
 @section('admincontent')
+@include('templateadmin.titulo')
 <div class="col-md-12 card card-frm">
     <!-- general form elements -->
     
@@ -13,7 +14,7 @@
           
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" name="nombre" class="form-control" value="{{$categorias->nombre}}">
+                    <input type="text" name="nombre" class="form-control" value="{{$categorias->nombre}}"required>
                 </div>
                 
           

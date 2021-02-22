@@ -24,7 +24,8 @@ class menuController extends Controller
       $menu->ruta=$request->ruta;
       $menu->orden=$request->orden;
       $menu->save();
-      return redirect('admin/menu');
+     
+      return redirect('admin/menu')->with('sdasadsasd');;
 
    }
    public function update($id, Request $request){

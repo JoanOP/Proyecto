@@ -1,5 +1,6 @@
 @extends('adminlte.principal')
 @section('admincontent')
+@include('templateadmin.titulo')
 <div class="col-md-12  card card-frm">
     <!-- general form elements -->
 
@@ -14,33 +15,23 @@
             @csrf
             <div class="form-group">
                 <label>Nombre</label>
-                <input type="text" name="nombre" class="form-control" value="{{$productos->nombre}}">
+                <input type="text" name="nombre" class="form-control" value="{{$productos->nombre}}" required>
             </div>
             <div class="form-group">
-                <label">Precio</label>
-                    <input type="text" name="precio" class="form-control" value="{{$productos->precio}}">
-            </div>
-
-            <div class="form-group">
-                <label">Imagen</label>
-                    <input type="text" name="imagen" class="form-control" value="{{$productos->imagen}}">
+                <label>Precio</label>
+                    <input type="text" name="precio" class="form-control" value="{{$productos->precio}}" required>
             </div>
 
             <!-- <div class="form-group">
-                    <label for="exampleInputFile">Imagen</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="imagen" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Seleccionar</label>
-                      </div>    
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Subir</span>
-                      </div>
-                    </div>
-                  </div>
-  
+                <label">Imagen</label>
+                    <input type="text" name="imagen" class="form-control" value="{{$productos->imagen}}" required>
             </div> -->
-            <!-- /.card-body -->
+            <div class="form-group">
+                 <label class="titulo_img">Imagen</label> 
+                 <div class="img_dtable"><img src="{{asset('imagenes/imgHome').'/'.$productos->imagen}}" class="titulo_img"></div>
+                    <input type="file" name="imagen" class="form-control" required>
+            </div>
+            <p>!La imagen se modifica en la BD pero no se esta guardando ni reemplazando en el sistema .............!</p>
 
             <div class="card-footer">
                 <button type="submit" class="btn btn-dark col-12">Editar</button>

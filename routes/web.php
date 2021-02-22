@@ -5,7 +5,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\menuController;
 use App\Http\Controllers\StoreController;
-use App\Http\Controllers\PreguntasController;
 use App\Http\Controllers\productosController;
 use App\Http\Controllers\redesController;
 use App\Http\Controllers\GarantiaController;
@@ -13,6 +12,7 @@ use App\Http\Controllers\tiendaController;
 use App\Http\Controllers\categoriaController;
 use App\Http\Controllers\FabricanteController;
 use App\Http\Controllers\adminlte\indexController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,13 +34,12 @@ Route::get('/', function () {
 
 Route::get('about', [AboutController::class, 'aboutpage']);
 Route::get('store', [StoreController::class, 'storepage']);
-Route::get('contacts', [HomeController::class, 'contactpage']);
-Route::get('favorites', [HomeController::class, 'favoritopage']);
-Route::get('checkout', [HomeController::class, 'checkoutpage']);
-Route::get('questions', [PreguntasController::class, 'Questionpage']);
+Route::get('contacts', [ContactController::class, 'contactpage']);
+// Route::get('checkout', [HomeController::class, 'checkoutpage']);
+// Route::get('questions', [PreguntasController::class, 'Questionpage']);
 Route::get('/', [menuController::class, 'listado']);
 
-Route::get('admin', [indexController::class, 'login']);
+// Route::get('admin', [indexController::class, 'login']);
 Route::get('admin/index', [indexController::class, 'index']);
 Route::get('admin/menu', [indexController::class, 'ingresomenu']);
 
@@ -92,5 +91,24 @@ Route::get('admin/fabricantes/edit/{id}',[FabricanteController::class,'edit']);
 Route::put('admin/fabricantes/update/{id}',[FabricanteController::class,'update']);
 Route::delete('admin/fabricantes/eliminar/{id}',[FabricanteController::class,'eliminar']);
 
+Route::get('admin/contact',[ContactController::class,'indexcontact']);
+Route::post('admin/ingreso/contact',[ContactController::class,'ingresocontact']);
+Route::get('admin/contact/edit/{id}',[ContactController::class,'edit']);
+Route::put('admin/contact/update/{id}',[ContactController::class,'update']);
+Route::delete('admin/contact/eliminar/{id}',[ContactController::class,'eliminar']);
 
 
+
+
+
+// Auth::routes();
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

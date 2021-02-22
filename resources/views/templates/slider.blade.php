@@ -16,13 +16,13 @@
                 <div class="inside-content">
                   <div class="container align-right">
 
-                    <h1 class="h3 colorful blue hidden-xs">Provide lightweight and powerull</h1>
+                    <h1 class="h3 colorful blue hidden-xs">Proporciona ligereza y potencia</h1>
 
                     <hr class="offset-sm">
-                    <h2 class="h1 lg upp colorful blue">New amazing <br> laptops</h2>
+                    <h2 class="h1 lg upp colorful blue">Nuevas laptops <br>increibles</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="{{url('store')}}" rel="nofollow" class="btn btn-primary btn-lg black"> More laptops </a>
+                    <a href="{{url('store')}}" rel="nofollow" class="btn btn-primary btn-lg black"> Más productos</a>
 
                   </div>
                 </div>
@@ -42,13 +42,13 @@
                 <div class="inside-content">
                   <div class="container">
 
-                    <h1 class="h3 colorful blue hidden-xs">Device is designed for the creative people</h1>
+                    <h1 class="h3 colorful blue hidden-xs">El dispositivo está diseñado para personas creativas.</h1>
                     <hr class="offset-sm">
 
                     <h2 class="h1 lg upp colorful blue">Apple <br> iMac 27 Retina</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
-                    <a href="{{url('store')}}" rel="nofollow" class="btn btn-primary btn-lg black"> View products </a>
+                    <a href="{{url('store')}}" rel="nofollow" class="btn btn-primary btn-lg black"> Ver productos </a>
                     
                   </div>
                 </div>
@@ -67,11 +67,8 @@
               <div class="outside-content">
                 <div class="inside-content">
                   <div class="container align-right">
-                  
-                    <h1 class="h3 colorful blue hidden-xs">Luxury watches, business tablets and 3D touch: <br> How Apple plans to stay ahead in mobile.</h1>
-
-                    <hr class="offset-sm">
-                    <h2 class="h1 lg upp colorful blue">Brand new day <br class="hidden-xs"> for business</h2>
+                
+                    <h2 class="h1 lg upp colorful blue">Nuevo día para <br class="hidden-xs">  los negocios</h2>
                     <hr class="offset-md">
                     <hr class="offset-md">
                

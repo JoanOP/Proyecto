@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title> Unistore Pro &middot; Premium Responsive E-Commerce Template</title>
+    <title>Tienda de equipos informáticos</title>
 
     <meta name="description" content="Bootstrap template for you store - E-Commerce Bootstrap Template">
     <meta name="keywords" content="unistore, e-commerce bootstrap template, premium e-commerce bootstrap template, premium bootstrap template, bootstrap template, e-commerce, bootstrap template, sunrise digital">
     <meta name="author" content="Sunrise Digital">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <link rel="shortcut icon" href="{{asset('adminlte/img/web.ico')}}" type="image/x-icon">
 
     <!-- Bootstrap -->
     @include('templates.css')
@@ -25,7 +25,7 @@
   <body>
     
    
-  @include('templates.cart')
+
   @include('templates.menu')
     
    <div>

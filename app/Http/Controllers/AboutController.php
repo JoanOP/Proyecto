@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
@@ -18,50 +19,46 @@ class AboutController extends Controller
          
       }
 
-
       public function aboutus(){
         $abouts=About::all();
        return view ('adminlte.About',compact('abouts'));
  }
-
+ 
  public function ingresoabout(Request $request){
-   $about=new About();
-   $about->titulo=$request->titulo;
-   $about->descripcion=$request->descripcion;
-   $about->imagen=$request->imagen;
-  // $about = $request->file('imagen')->getClientOriginalExtension();
-  // return $request->file('imagen')->storeAS('docs', 'FileName.' . $about);
+  
+  $about=new About();
+  $file=$request->file('imagen');
+  $img=time()."-".$file->getClientOriginalName();
+  $about->titulo=$request->titulo;
+  $about->descripcion=$request->descripcion;
+  $about->imagen=$img;
   $about->save();
-   return redirect('admin/abouts');
+  Storage::disk('imagenAbout')->put($img,\File::get($file));
+  return redirect('admin/abouts');
+
 
  }
 
- public function image(Request $req)
- {
-
-   
-    
- }
-      
-
-      public function formularioedit($id){
+  public function formularioedit($id){
         $abouts=About::find($id);
         return view ('adminlte.editAbout',compact('abouts'));
-      }
+  }
       
-      public function update($id,Request $request){
-   $abouts=About::find($id); 
-   $abouts->titulo=$request->titulo;
-   $abouts->descripcion=$request->descripcion;
-   $abouts->imagen=$request->imagen;
-   $abouts->save();
-   return redirect('admin/abouts');
+  public function update($id,Request $request){
+    
+    $about=About::findOrFail($id);
+    $about->titulo=$request->titulo;
+    $about->imagen=$request->imagen;
+  $about->descripcion=$request->descripcion;
+  
+    $about->save();
+    return redirect('admin/abouts');
 
  }
       public function eliminar($id){
    $abouts=About::find($id); 
-   
-   $abouts->delete();
+  //  About::destroy($id);
+  $abouts->delete();
    return redirect('admin/abouts');
 
  }

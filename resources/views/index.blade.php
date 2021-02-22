@@ -14,7 +14,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="{{url('store')}}" rel="nofollow" class="btn btn-default black"> Buy now </a>
+                  <a href="{{url('store')}}" rel="nofollow" class="btn btn-default black"> Ver más </a>
                 </div>
               </div>
             </div>
@@ -26,7 +26,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="{{url('store')}}" rel="nofollow" class="btn btn-primary black"> Buy now </a>
+                  <a href="{{url('store')}}" rel="nofollow" class="btn btn-primary black">Ver más </a>
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="{{url('store')}}" rel="nofollow" class="btn btn-primary black"> Buy now </a>
+                  <a href="{{url('store')}}" rel="nofollow" class="btn btn-primary black">Ver más</a>
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@
               <div class="wrapper">
                 <div class="content">
                   <hr class="offset-sm">
-                  <a href="{{url('store')}}" rel="nofollow" class="btn btn-primary black"> Buy now </a>
+                  <a href="{{url('store')}}" rel="nofollow" class="btn btn-primary black">Ver más</a>
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@
 
     <section class="products">
       <div class="container">
-        <h2 class="h2 upp align-center"> Products</h2>
+        <h2 class="h2 upp align-center" style="text-transform:uppercase;"> Productos</h2>
         <hr class="offset-lg">
 
         <div class="row">
@@ -74,16 +74,15 @@
              <div class="col-sm-6 col-md-3 product">
             
             <div class="body">
-              <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
-              <a href="./"><img src="{{$producto->imagen}}" alt="Apple iMac 27 Retina"/></a>
+              
+              <img src="{{asset('imagenes/imgHome').'/'.$producto->imagen}}" alt="Apple iMac 27 Retina"/>
 
               <div class="content align-center"> 
-              <p class="price">{{$producto->precio}}</p>
+              <p class="price">${{$producto->precio}}</p>
                 <h2 class="h3">{{$producto->nombre}}</h2>
                 <hr class="offset-sm">
 
-                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
-                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+              <a href="{{url('store')}}"><button class="btn btn-primary btn-sm rounded"> Ver más</button> </a>
               </div>
               </div>
           </div>
